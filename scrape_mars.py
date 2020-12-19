@@ -9,7 +9,7 @@ def init_browser():
     executable_path = {"executable_path":"../chromedriver.exe"}
     return Browser("chrome", **executable_path, headless=False)
 
-def scrape():
+def scrape_info():
     browser = init_browser()
 
     ###Headline###
@@ -32,11 +32,11 @@ def scrape():
     URL_Base = "https://www.jpl.nasa.gov"
     ImageURL = f"{URL_Base}{featured_image_url}"
 
-    ###Facts Table###
-    Facts_url = "https://space-facts.com/mars/"
-    browser.visit(Facts_url)
-    Fact_Table = pd.read_html(Facts_url)
-    FactTable_df = Fact_Table[0].rename(columns={0: "Description", 1: "Mars"}).set_index("Description")
+    # ###Facts Table###
+    # Facts_url = "https://space-facts.com/mars/"
+    # browser.visit(Facts_url)
+    # Fact_Table = pd.read_html(Facts_url)
+    # FactTable_df = Fact_Table[0].rename(columns={0: "Description", 1: "Mars"}).set_index("Description")
 
     ###Hemisphere Images###
     hemi_url = "https://astrogeology.usgs.gov/search/results?q=hemisphere+enhanced&k1=target&v1=Mars"
@@ -106,12 +106,11 @@ def scrape():
     hemisphere_images_urls.append(hemi_dict)
     
     ###Final dictionary###
-    NASA_Data = {
+    mars_data = {
         "Headline" : FirstHeadLine,
-        "Featured Image" : ImageURL,
-        "Facts Table" : FactTable_df,
-        "Hemisphere Images" : hemisphere_images_urls}
+        "Featured_Image" : ImageURL,
+        "Hemisphere_Images" : hemisphere_images_urls}
 
     browser.quit()
 
-    return NASA_Data
+    return mars_data
