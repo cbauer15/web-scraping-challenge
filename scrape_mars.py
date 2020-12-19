@@ -20,6 +20,7 @@ def scrape_info():
     soup = bs(html, "html.parser")
     first_headline = soup.find("li", class_="slide")
     FirstHeadLine = first_headline.find("div", class_="content_title").text
+    HeadlineText = first_headline.find("div", class_="article_teaser_body").text
     
     ###Featured Image###
     featured_image_url = "https://www.jpl.nasa.gov/spaceimages/?search=&category=Mars"
@@ -108,6 +109,7 @@ def scrape_info():
     ###Final dictionary###
     mars_data = {
         "Headline" : FirstHeadLine,
+        "HeadlineText" : HeadlineText,
         "Featured_Image" : ImageURL,
         "Hemisphere_Images" : hemisphere_images_urls}
 
