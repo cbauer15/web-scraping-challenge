@@ -86,8 +86,21 @@
           </div>
         </div>
       </div>
-    </div>  
-    <div class="container">
+    </div> 
+    <h2>Mars Hemispheres</h2>
+    <hr />
+    <div class="row">
+    {% for img in mars.Hemisphere_Images%}
+      <div class="col-md-3">
+        <h3>{{img.title}}</h3>
+        <img src={{img.img_url}} style="max-width: 90%">
+      </div>
+    {% endfor %}
+    </div>
+
+
+
+    <!-- <div class="container">
       <h1 style="text-align: center;">Hemisphere</h1>
       <div class="row">
           <div class="col-lg-6 col-sm-12">
@@ -111,7 +124,7 @@
             </a>
           </div>
       </div>
-  </div>
+  </div> -->
 
 
   </div>
