@@ -19,23 +19,35 @@
       <p>To infinity and beyond!!</p>
       <p><a class="btn btn-primary btn-lg" href="/scrape" role="button">Get Data!</a></p>
     </div>
-    <div class="container text-center">
-      <div class="container">     
-        <div class="row">
-          <div class=mx-auto d-block>    
-            <h1>Lastest Mars News:</h1>
-            <h3>{{mars.Headline}} </h3>
-            <h3>{{mars.HeadlineText}}</h3>
-          </div>
-          <table border="1" class="dataframe">
-            <thead>
-              <tr style="text-align: right;">
-                <th></th>
+  </div>
+ 
+  <div class="container text-left">
+    <div class="p-3 border bg-light">
+    <div class="container">     
+      <div class="row">
+        <div class="align-baseline">    
+          <h1>Lastest Mars News:</h1>
+          <h3>{{mars.Headline}} </h3>
+          <p>{{mars.HeadlineText}}</p>
+        </div>
+      </div>
+    </div>  
+
+    <div class="align-baseline">
+     <div class="p-3 border bg-light">
+      <h1>Featured Image</h1>
+       <div class="container">     
+        <div class="float-left">
+           <img src= {{mars.Featured_Image}} alt="Fig 1" style="width:60%">
+            <div class="float-right">
+             <h2>Mars Facts</h2>
+             <table border="1" class="table table-striped">
+              <thead>
+              <tr style="text-align: center;">
+                <th>Description</th>
                 <th>Mars</th>
               </tr>
               <tr>
-                <th>Description</th>
-                <th></th>
               </tr>
             </thead>
             <tbody>
@@ -77,57 +89,30 @@
               </tr>
             </tbody>
           </table>
-    <div class="container text-center">
-      <h1>Featured Image</h1>
-      <div class="container">     
-        <div class="row">
-          <div class=mx-auto d-block>
-            <img src= {{mars.Featured_Image}} alt="Fig 1" style="width:100%">
-          </div>
         </div>
       </div>
-    </div> 
+    </div>
+  </div>
+
+  <div class="container">     
+    <div class="row">
+      <h1> </h1>
+      <p> </p>
+    </div>
+  </div>
+
+ <div class="container text-center">
+  <div class="container">    
     <h2>Mars Hemispheres</h2>
     <hr />
     <div class="row">
     {% for img in mars.Hemisphere_Images%}
-      <div class="col-md-3">
-        <h3>{{img.title}}</h3>
-        <img src={{img.img_url}} style="max-width: 90%">
+      <div class="col-md-3"> 
+        <h3>{{img.title}} </h3>
+        <img src={{img.img_url}} style="max-width: 80%">
       </div>
     {% endfor %}
     </div>
-
-
-
-    <!-- <div class="container">
-      <h1 style="text-align: center;">Hemisphere</h1>
-      <div class="row">
-          <div class="col-lg-6 col-sm-12">
-            <h5 style="text-align: center;">TBD</h5>
-            <img src="PLACEHOLDER" alt="Fig 1" style="width:100%">
-            </a>
-          </div>
-          <div class="col-lg-6 col-sm-12">
-            <h5 style="text-align: center;">TBD</h5>            
-            <img src="PLACEHOLDER" alt="Fig 2" style="width:100%">
-            </a>
-          </div>
-          <div class="col-lg-6 col-lg-push-6 col-sm-12">
-            <h5 style="text-align: center;">TBD</h5>            
-            <img src="PLACEHOLDER" alt="Fig 3" style="width:100%">
-            </a>
-          </div>
-          <div class="col-lg-6 col-lg-pull-6 col-sm-12">
-            <h5 style="text-align: center;">TBD</h5>            
-            <img src="PLACEHOLDER" alt="Fig 4" style="width:100%">
-            </a>
-          </div>
-      </div>
-  </div> -->
-
-
-  </div>
   </div>
 </body>
 
